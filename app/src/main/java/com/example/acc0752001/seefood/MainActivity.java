@@ -1,9 +1,12 @@
 package com.example.acc0752001.seefood;
 
+import android.app.ListActivity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DialogTitle;
@@ -12,33 +15,69 @@ import android.text.AlteredCharSequence;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
-    @Override
+public class MainActivity extends ListActivity {
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        ArrayList<String> albumlist = new ArrayList<String>();
+
+        albumlist.add("早餐");
+        albumlist.add("午餐");
+        albumlist.add("晚餐");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.listitem, R.id.tv_listitem,albumlist);
+        setListAdapter(adapter);
+
+
     }
 
-    @Override
+    protected void onListItemClick(ListView l,View v ,int position , long id){
+        super.onListItemClick(l,v,position,id);
+
+        int [] imageIds = null;
+        int columns = 3;
+        switch (position){
+            case  0 :
+                imageIds = new int[5];
+                imageIds[0] = R.drawable.hm001;
+                imageIds[0] = R.drawable.hm002;
+                imageIds[0] = R.drawable.hm003;
+                imageIds[0] = R.drawable.hm004;
+                imageIds[0] = R.drawable.hm005;
+                columns = 2;
+                break;
+
+            case  1:
+                imageIds = new int[5];
+                imageIds[0] = R.drawable.lun001;
+                imageIds[0] = R.drawable.lun002;
+                imageIds[0] = R.drawable.lun003;
+                imageIds[0] = R.drawable.lun004;
+                imageIds[0] = R.drawable.lun005;
+                break;
+
+        }
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this,GridActivity.class);
+        intent.putExtra("KEY_IDS",imageIds);
+        intent.putExtra("KEY_COLUMNS",columns);
+        startActity(intent);
+    }
+
+
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.auther:
