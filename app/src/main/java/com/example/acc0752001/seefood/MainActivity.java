@@ -22,6 +22,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends ListActivity {
 
+    private  Intent intent = new Intent();
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -103,5 +105,38 @@ public class MainActivity extends ListActivity {
 
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public int random(){
+        int num = (int)(Math.random()*5+1);
+        return num;
+    }
+    public void choose(int num){
+        switch (num){
+            case 1:
+                intent.setClass(MainActivity.this,Restaurant1.class);
+                startActivity(intent);
+                break;
+
+            case 2:
+                intent.setClass(MainActivity.this,Restaurant2.class);
+                startActivity(intent);
+                break;
+
+            case 3:
+                intent.setClass(MainActivity.this,Restaurant3.class);
+                startActivity(intent);
+                break;
+
+            case 4:
+                intent.setClass(MainActivity.this,Restaurant4.class);
+                startActivity(intent);
+                break;
+
+            case 5:
+                intent.setClass(MainActivity.this,Restaurant5.class);
+                startActivity(intent);
+                break;
+        }
     }
 }
