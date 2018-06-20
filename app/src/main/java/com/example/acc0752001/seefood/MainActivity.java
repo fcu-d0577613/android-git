@@ -31,7 +31,6 @@ public class MainActivity extends ListActivity {
 
         albumlist.add("早餐");
         albumlist.add("午餐");
-        albumlist.add("晚餐");
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.listitem, R.id.tv_listitem,albumlist);
         setListAdapter(adapter);
@@ -43,7 +42,7 @@ public class MainActivity extends ListActivity {
         super.onListItemClick(l,v,position,id);
 
         int [] imageIds = null;
-        int columns = position;
+        int columns = 3;
         switch (position){
             case  0 :
                 imageIds = new int[5];
@@ -52,7 +51,6 @@ public class MainActivity extends ListActivity {
                 imageIds[2] = R.drawable.hm003;
                 imageIds[3] = R.drawable.hm004;
                 imageIds[4] = R.drawable.hm005;
-                columns = 2;
                 break;
 
             case  1:
