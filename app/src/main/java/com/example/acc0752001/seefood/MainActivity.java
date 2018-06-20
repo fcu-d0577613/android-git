@@ -46,7 +46,7 @@ public class MainActivity extends ListActivity {
         switch (position){
             case  0 :
                 imageIds = new int[5];
-                imageIds[0] = R.drawable.hm001;
+                //imageIds[0] = R.drawable.hm001;
                 imageIds[1] = R.drawable.hm002;
                 imageIds[2] = R.drawable.hm003;
                 imageIds[3] = R.drawable.hm004;
@@ -75,7 +75,7 @@ public class MainActivity extends ListActivity {
 
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+//        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 

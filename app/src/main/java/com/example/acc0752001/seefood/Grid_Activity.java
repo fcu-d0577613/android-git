@@ -15,7 +15,6 @@ import android.widget.ImageView;
 
 public class Grid_Activity {
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid_);

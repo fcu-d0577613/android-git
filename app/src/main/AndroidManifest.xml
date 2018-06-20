@@ -22,8 +22,12 @@
         <activity
             android:name=".Grid_Activity"
             android:label="@string/title_activity_grid_"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Restaurant1" />
+        <activity android:name=".Restaurant2" />
+        <activity android:name=".Restaurant3" />
+        <activity android:name=".Restaurant4" />
+        <activity android:name=".Restaurant5"></activity>
     </application>
 
 </manifest>
