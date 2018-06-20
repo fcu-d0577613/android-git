@@ -43,33 +43,36 @@ public class MainActivity extends ListActivity {
         super.onListItemClick(l,v,position,id);
 
         int [] imageIds = null;
-        int columns = 3;
+        int columns = position;
         switch (position){
             case  0 :
                 imageIds = new int[5];
                 imageIds[0] = R.drawable.hm001;
-                imageIds[0] = R.drawable.hm002;
-                imageIds[0] = R.drawable.hm003;
-                imageIds[0] = R.drawable.hm004;
-                imageIds[0] = R.drawable.hm005;
+                imageIds[1] = R.drawable.hm002;
+                imageIds[2] = R.drawable.hm003;
+                imageIds[3] = R.drawable.hm004;
+                imageIds[4] = R.drawable.hm005;
                 columns = 2;
                 break;
 
             case  1:
                 imageIds = new int[5];
                 imageIds[0] = R.drawable.lun001;
-                imageIds[0] = R.drawable.lun002;
-                imageIds[0] = R.drawable.lun003;
-                imageIds[0] = R.drawable.lun004;
-                imageIds[0] = R.drawable.lun005;
+                imageIds[1] = R.drawable.lun002;
+                imageIds[2] = R.drawable.lun003;
+                imageIds[3] = R.drawable.lun004;
+                imageIds[4] = R.drawable.lun005;
+                break;
+
+            default:
                 break;
 
         }
         Intent intent = new Intent();
-        intent.setClass(MainActivity.this,GridActivity.class);
-        intent.putExtra("KEY_IDS",imageIds);
+        intent.setClass(MainActivity.this,Grid_Activity.class);
+       intent.putExtra("KEY_IDS",imageIds);
         intent.putExtra("KEY_COLUMNS",columns);
-        startActity(intent);
+        startActivity(intent);
     }
 
 

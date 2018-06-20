@@ -2,4 +2,5 @@
     <string name="app_name">seefood</string>
     <string name="action_auther">作者</string>
     <string name="action_quit">結束程式</string>
+    <string name="title_activity_grid_">Grid_Activity</string>
 </resources>
