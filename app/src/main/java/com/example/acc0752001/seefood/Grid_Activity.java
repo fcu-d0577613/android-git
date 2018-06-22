@@ -13,7 +13,8 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-public class Grid_Activity {
+public class Grid_Activity  extends AppCompatActivity {
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
