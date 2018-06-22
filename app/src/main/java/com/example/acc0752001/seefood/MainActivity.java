@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends ListActivity {
 
-    private  Intent intent = new Intent();
+    private Intent intent = new Intent();
     private Button random;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,6 +118,10 @@ public class MainActivity extends ListActivity {
                 AlertDialog.Builder ad = new AlertDialog.Builder(this);
                 ad.setTitle("作者群");
                 ad.setMessage("作者:林承毅");
+                ad.setMessage("作者:李浩維");
+                ad.setMessage("作者:陳陸彥");
+                ad.setMessage("作者:陳贊年");
+
 
                 DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
                     @Override

@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.example.acc0752001.seefood"
@@ -16,6 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
